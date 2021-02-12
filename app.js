@@ -18,7 +18,7 @@ let port = process.env.PORT || 8081;
 let portForSwagger = process.env.PORT || 8080;
 if(port != 8081)
 {
-    swaggerDocument.host="localhost:" + process.env.PORT;   
+    swaggerDocument.host=process.env.PORT;   
 }
 else{
     swaggerDocument.host="localhost:" + 8081;
