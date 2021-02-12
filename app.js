@@ -14,6 +14,9 @@ const swaggerUi = require('swagger-ui-express'),swaggerDocument = require('./swa
 
 // Port For app to listen to
 let port = process.env.PORT || 8081;
+if (process.env.NODE_ENV === 'development') {
+  swaggerDoc.host="localhost:" + process.env.PORT
+}
 
 // DataLength which is used for assigning to id when POST request is called
 var dataLength;
