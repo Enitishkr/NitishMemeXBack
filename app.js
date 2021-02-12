@@ -1,6 +1,5 @@
 var express = require('express');
 var app = express();
-var appSwagger = express();
 // Import mongoose for DB connection
 const mongoose = require('mongoose');
 require('dotenv/config');
@@ -50,7 +49,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(bodyParser.json());
 
-appSwagger.use('/swagger-ui', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/swagger-ui', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
 // For Getting Latest 100 Memes without Time Parameter
